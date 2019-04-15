@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: client-orderadmin
+  profiles:
+    active: auth
+server:
+  port: 8862
+  session:
+    cookie:
+      name: ORDERADMINSESSION
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

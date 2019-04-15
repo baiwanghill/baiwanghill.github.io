@@ -1,0 +1,11 @@
+server:
+  port: 8761
+ 
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #是否将自身注册到eureka
+    fetchRegistry: false #是否抓取注册信息
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

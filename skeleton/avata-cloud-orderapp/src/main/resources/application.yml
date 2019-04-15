@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: client-orderapp
+  profiles:
+    active: auth
+     
+server:
+  port: 8863
+  session:
+    cookie:
+      name: ORDERAPPSESSION
+
+auth-server: http://localhost:8762/auth
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      accessTokenUri:  ${auth-server}/oauth/token
+      userAuthorizationUri:  ${auth-server}/oauth/authorize
+      clientId: client
+      clientSecret: secret
+      grant-type: password
+      scope: user_info
+    resource:
+      user-info-uri: ${auth-server}/user
+    authorization:
+      check-token-access: ${auth-server}/oauth/check_token
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

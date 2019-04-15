@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: service-order
+  profiles:
+    active: auth 
+server:
+  port: 8763
+  session:
+    cookie:
+      name: ORDERSERVICESESSION
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

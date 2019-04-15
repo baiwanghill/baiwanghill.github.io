@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: service-auth
+server:
+  port: 8762
+  servlet:
+    context-path: /auth
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
